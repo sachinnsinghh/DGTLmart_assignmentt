@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+require('dotenv').config();
 const cors = require('cors');
 const app = express();
 app.use(cors({
@@ -7,7 +8,7 @@ app.use(cors({
 }));
 const PORT = 8000;
 
-mongoose.connect('mongodb+srv://sachinsingh000094:THYnJBfi4HBqpgTq@cluster0.4bipdmb.mongodb.net/searchMern', {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
